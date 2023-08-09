@@ -1,0 +1,338 @@
+:root {
+    --primary: #008bd2;
+    --secondary: #ff5454;
+    --lightblue: #c9eeff;
+    --lightgray: #f3f3f4;
+    --mediumgray: #989898;
+    --boldgray: #5e5e5e;
+    --extragray: #333333;
+    --lightred: #ffe1e1;
+    --lightgreen: #e8ffe1;
+    --lightviolet: #f1e1ff;
+    --green: #44dd15;
+    --violet: #7311c9;
+}
+
+/* LES PRINCIPAUX STYLES GLOBAUX */
+
+html {
+    font-size: 15px;
+}
+
+body {
+    overflow-x: hidden;
+    color: var(--extragray);
+}
+
+a {
+    color: inherit;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+a:hover {
+    color: var(--primary);
+}
+a.no-color-change:hover {
+    color: inherit;
+}
+
+img.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+img.h-cover {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+nav li {
+    list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+    outline: none !important;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    box-shadow: none !important;
+}
+
+.logo {
+    height: 120px;
+    width: auto;
+}
+
+input.input,
+textarea.input,
+select.input {
+    border-radius: 10px;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    background: transparent !important;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    transition: 0.3s ease;
+    padding: 12px;
+    width: 100%;
+}
+
+input.input:focus,
+textarea.input:focus,
+select.input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
+    border-color: rgba(7, 30, 46, 0.2);
+}
+
+.btn-core,
+a.btn-core {
+    color: whitesmoke !important;
+    background: var(--primary);
+    border: none;
+    padding: 12px 25px;
+    display: inline-block !important;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-core:hover,
+a.btn-core:hover {
+    box-shadow: 0 0 10px 5px rgba(0, 140, 210, 0.15);
+}
+
+.bg-lightgray {
+    background: var(--lightgray);
+}
+
+.h-full {
+    min-height: 100vh;
+}
+
+.w-sm {
+    width: 300px;
+}
+
+.w-md {
+    width: 450px;
+}
+
+.w-lg {
+    width: 800px;
+}
+
+.rounded-sm {
+    border-radius: 10px;
+}
+.rounded-md {
+    border-radius: 20px;
+}
+.rounded-lg {
+    border-radius: 30px;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+.text-secondary {
+    color: var(--secondary) !important;
+}
+.text-light-sm {
+    color: var(--mediumgray);
+}
+.text-light-md {
+    color: var(--boldgray);
+}
+.text-light-lg {
+    color: var(--extragray);
+}
+
+.logo-sm {
+    height: 50px;
+    width: auto;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 12px 15px;
+    transition: 0.3s ease;
+    z-index: 50;
+}
+
+.side-link {
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    background: transparent;
+    display: block !important;
+    border: none;
+    outline: none;
+}
+.side-link.active {
+    background: var(--lightblue);
+    color: var(--primary);
+}
+.side-link:hover {
+    color: var(--primary);
+}
+
+.btn-unstyled {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+}
+
+.btn-circle-sm {
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--mediumgray);
+    color: white;
+    transition: 0.3s ease;
+}
+.btn-circle-sm:hover {
+    background: var(--secondary);
+}
+.btn-circle-sm.light {
+    background: var(--lightgray);
+    color: var(--extragray);
+}
+.btn-circle-sm.light:hover {
+    background: var(--mediumgray);
+    color: white;
+}
+
+.top-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.sidebar .btn-circle-sm {
+    display: none;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--lightblue);
+    overflow: hidden;
+}
+
+.topbar {
+    padding: 12px 15px;
+}
+
+.main-content {
+    width: calc(100% - 300px);
+}
+
+.hamburger .btn-circle-sm.light {
+    display: none;
+}
+
+.box-card {
+    border-radius: 20px;
+    border: 1px solid var(--lightblue);
+    padding: 12px;
+    position: relative;
+}
+
+.paddings {
+    padding: 0 15px;
+}
+
+.white-box {
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+}
+
+/* btn circle */
+.btn-circle {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  color: var(--primary);
+  background: var(--lightblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin-right: 10px;
+  transition: .3s ease;
+}
+
+.btn-circle.green {
+  color: var(--green);
+  background: var(--lightgreen);
+}
+
+.btn-circle.red {
+  color: var(--secondary);
+  background: var(--lightred);
+}
+
+.btn-circle.violet {
+  color: var(--violet);
+  background: var(--lightviolet);
+}
+
+/* DESIGN RESPONSIF */
+@media screen and (max-width: 768px) {
+    .w-lg {
+        width: unset;
+        max-width: 500px;
+    }
+    .sidebar .btn-circle-sm {
+        display: inline-block;
+    }
+
+    .sidebar {
+        left: -150%;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebar-wrapper {
+        width: 0px;
+    }
+    .main-content {
+        width: 100%;
+    }
+    .hamburger .btn-circle-sm.light {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .w-md {
+        width: unset;
+        max-width: 350px;
+    }
+}
