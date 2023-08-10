@@ -32,7 +32,7 @@ class UserController extends Controller
         // Login
         // auth()->login($user);
 
-        return redirect('/products')->with('message', 'Utilisateur créé avec succes');
+        return redirect('/login')->with('message', 'Utilisateur créé avec succes');
     }
 
     // Logout User
@@ -61,7 +61,7 @@ class UserController extends Controller
         if(auth()->attempt($formFields)) {
             $request->session()->regenerate();
 
-            return redirect('/products')->with('message', 'Bienvenue Monsieur, ça fait un bail!');
+            return redirect('/home')->with('message', 'Bienvenue Monsieur, ça fait un bail!');
         }
 
         return back()->withErrors(['email' => 'Crédentiels invalides, désolé!'])->onlyInput('email');

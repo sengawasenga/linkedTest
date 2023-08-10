@@ -160,72 +160,6 @@ a.btn-core:hover {
     width: auto;
 }
 
-.sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    padding: 12px 15px;
-    transition: 0.3s ease;
-    z-index: 50;
-}
-
-.side-link {
-    padding: 12px 15px;
-    border-radius: 10px;
-    transition: 0.3s ease;
-    background: transparent;
-    display: block !important;
-    border: none;
-    outline: none;
-}
-.side-link.active {
-    background: var(--lightblue);
-    color: var(--primary);
-}
-.side-link:hover {
-    color: var(--primary);
-}
-
-.btn-unstyled {
-    border: none;
-    outline: none;
-    background: none;
-    padding: 0;
-}
-
-.btn-circle-sm {
-    border: none;
-    outline: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--mediumgray);
-    color: white;
-    transition: 0.3s ease;
-}
-.btn-circle-sm:hover {
-    background: var(--secondary);
-}
-.btn-circle-sm.light {
-    background: var(--lightgray);
-    color: var(--extragray);
-}
-.btn-circle-sm.light:hover {
-    background: var(--mediumgray);
-    color: white;
-}
-
-.top-right {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-.sidebar .btn-circle-sm {
-    display: none;
-}
-
 .profile-pic {
     width: 40px;
     height: 40px;
@@ -246,87 +180,37 @@ a.btn-core:hover {
     display: none;
 }
 
-.box-card {
-    border-radius: 20px;
-    border: 1px solid var(--lightblue);
-    padding: 12px;
-    position: relative;
-}
 
-.paddings {
-    padding: 0 15px;
-}
-
-.white-box {
-    border-radius: 15px;
-    background: white;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-    padding: 10px;
+.message-boxes {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 80px;
-    height: 80px;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+    height: 500px;
+
 }
 
-/* btn circle */
-.btn-circle {
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  width: 30px;
-  height: 30px;
-  color: var(--primary);
-  background: var(--lightblue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  margin-right: 10px;
-  transition: .3s ease;
+.message-box {
+    width: 75%;
+    border-radius: 10px;
+    padding: 8px;
 }
 
-.btn-circle.green {
-  color: var(--green);
-  background: var(--lightgreen);
+.message-box.me {
+    background: #cfcfcf;
+    align-self: flex-end;
+}
+.message-box.friend {
+    background: #ace1ff;
+    align-self: flex-start;
 }
 
-.btn-circle.red {
-  color: var(--secondary);
-  background: var(--lightred);
-}
-
-.btn-circle.violet {
-  color: var(--violet);
-  background: var(--lightviolet);
-}
 
 /* DESIGN RESPONSIF */
 @media screen and (max-width: 768px) {
     .w-lg {
         width: unset;
         max-width: 500px;
-    }
-    .sidebar .btn-circle-sm {
-        display: inline-block;
-    }
-
-    .sidebar {
-        left: -150%;
-    }
-    .sidebar.active {
-        left: 0;
-    }
-
-    .sidebar-wrapper {
-        width: 0px;
-    }
-    .main-content {
-        width: 100%;
-    }
-    .hamburger .btn-circle-sm.light {
-        display: inline-block;
     }
 }
 

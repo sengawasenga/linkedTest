@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FriendRequestController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -26,6 +28,21 @@ use App\Http\Controllers\StationController;
 // update - Update resource
 // destroy - Delete resource  
 
+// the home route goes right here
+Route::get('/home', [HomeController::class, 'index'])->middleware('auth');
+Route::get('/users', [HomeController::class, 'users'])->middleware('auth');
+Route::post('/friend-requests', [FriendRequestController::class, 'store'])->name('friend-requests.store')->middleware('auth');
+Route::post('/friend-requests/{friendRequest}/accept', [FriendRequestController::class, 'accept'])->name('friend-requests.accept')->middleware('auth');
+Route::post('/friend-requests/{friendRequest}/reject', [FriendRequestController::class, 'reject'])->name('friend-requests.reject')->middleware('auth');
+
+// the message routes go right here
+
+Route::get('/chat', function () {
+    return view('chat.index');
+})->middleware('auth');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -37,9 +54,7 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 Route::post('/users/create', [UserController::class, 'store']);
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-// the products routes go right here
-Route::get('/products', [ProductController::class, 'index'])->name('products')->middleware('auth');
-Route::get('/products/details', [ProductController::class, 'show'])->name('show.products')->middleware('auth');
+
 
 
 
